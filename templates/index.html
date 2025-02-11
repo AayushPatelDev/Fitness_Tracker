@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Track Your Workout</h4>
+            </div>
+            <div class="card-body">
+                <form id="workout-form">
+                    <div class="mb-3">
+                        <label for="exercise" class="form-label">What exercises did you do?</label>
+                        <textarea 
+                            class="form-control" 
+                            id="exercise" 
+                            name="exercise" 
+                            rows="3" 
+                            placeholder="Example: Ran 3 miles, walked for 30 minutes"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i> Add Workout
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="results" class="mt-4" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Workout Summary</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Exercise</th>
+                                    <th>Duration (min)</th>
+                                    <th>Calories</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-alert" class="alert alert-danger mt-4" style="display: none;">
+        </div>
+    </div>
+</div>
+{% endblock %}
